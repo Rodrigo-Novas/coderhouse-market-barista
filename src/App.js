@@ -1,21 +1,29 @@
-import logo from './logo-cafe.svg';
-import './App.css';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faFacebook } from "@fortawesome/free-brands-svg-icons"
-import { faHome } from "@fortawesome/free-solid-svg-icons";
+import React from "react";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
+import { About } from "./components/about"; //debemos intalar esto antes npm i react-router-dom bootswatch
+import { Processes } from "./components/market";
+import { Navbar } from "./components/navbar";
+import { Alert } from "./components/alert";
 
-//para usar favicon coloque el comando npm i --save @fortawesome/fontawesome-svg-core  @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome
+
+
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-      <div>
-      <FontAwesomeIcon icon={faHome} />
-      <FontAwesomeIcon icon={faFacebook} />
-      </div>
-      </header>
+    <Router>
+    <Alert/>
+    <Navbar/>
+    <div className="container p-3"></div>
+    <div>
+      <Switch>
+        <Route path="/about" component={About}/>
+        <Route path="/" component={Processes}/>
+      </Switch>
     </div>
-  );
+  </Router>
+  )
 }
 
 export default App;
+
+
