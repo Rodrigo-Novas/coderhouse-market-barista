@@ -7,7 +7,8 @@ export const Processes = () => {
         <div className="col-md-12 my-4 mx-4">
             <h1>Market</h1>
         </div>
-        <ItemListContainer/>
+        {/* aplicate prop greeting */}
+        <ItemListContainer product="Coffe of salamanca"/>
         <div className="col-md-12 my-2 mx-4">
             <p>Coderhouse - In this place we will see the cards with the products
 
