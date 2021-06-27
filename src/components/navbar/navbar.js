@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { Carts } from "./cart"
-import logo from '../baristappLogo.png';
+import { Carts } from "../cart/cart"
+import logo from '../../baristappLogo.png';
 export const Navbar = () => (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="container-fluid">

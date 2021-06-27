@@ -1,9 +1,9 @@
 import React from "react";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
-import { About } from "./components/about"; //debemos intalar esto antes npm i react-router-dom bootswatch
-import { Processes } from "./components/market";
-import { Navbar } from "./components/navbar";
-import { Alert } from "./components/alert";
+import { About } from "./components/routes/about"; //debemos intalar esto antes npm i react-router-dom bootswatch
+import { Processes } from "./components/routes/market";
+import { Navbar } from "./components/navbar/navbar";
+import { Alert } from "./components/alerts/alert";
 
 
 
