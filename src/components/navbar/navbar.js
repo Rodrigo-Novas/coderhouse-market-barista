@@ -2,10 +2,11 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { Carts } from "../cart/CartWidget"
 import logo from '../../../../baristapp/src/assets/baristappLogo.png';
+
 export const Navbar = () => (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="container-fluid">
-            <Link className="navbar-brand" to="/">
+            <Link className="navbar-brand mx-3" to="/">
               <img src={logo} alt="baristapp-logo" width="30" height="24" class="d-inline-block align-text-top"/>
                 BaristApp
             </Link>
