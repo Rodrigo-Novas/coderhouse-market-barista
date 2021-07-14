@@ -11,7 +11,7 @@ return(
                 <p className="card-text text-secondary">{productos.price}</p>
             </div>
 
-            <Link to={`/items/${productos.id}`} className="btn btn-primary boton">Detalles</Link>
+            <Link to={`/items/${productos.id}`} className="btn btn-primary boton">Details</Link>
         </div>
         
     )
