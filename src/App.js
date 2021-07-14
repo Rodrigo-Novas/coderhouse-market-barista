@@ -2,8 +2,10 @@ import React from "react";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import { About } from "./components/routes/About"; //debemos intalar esto antes npm i react-router-dom bootswatch
 import { Processes } from "./components/routes/Market";
+import { ItemDetailContainer } from "./components/itemDetail/ItemDetailContainer";
 import { Navbar } from "./components/navbar/Navbar";
 import { Alert } from "./components/alerts/Alert";
+import { Courses } from "./components/courses/Course";
 import {ThemeProvider} from "styled-components";
 import { GlobalStyles } from "./components/themes/GlobalStyles";
 import { useDarkMode } from "./components/themes/useDarkMode";
@@ -28,8 +30,11 @@ function App() {
         <div className="container p-3"></div>
         <div>
           <Switch>
+            <Route path="/items/:id" component={ItemDetailContainer}/>
             <Route path="/about" component={About}/>
+            <Route path="/courses" component={Courses}/>
             <Route path="/" component={Processes}/>
+
           </Switch>
         </div>
       </Router>

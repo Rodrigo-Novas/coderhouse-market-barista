@@ -6,6 +6,12 @@ export const GlobalStyles = createGlobalStyle`
     font-family: Tahoma, Helvetica, Arial, Roboto, sans-serif;
     transition: all 0.50s linear;
   }
+  .item-cantity{
+    color: #363537;
+  }
+  .boton:hover{
+    color: #1DB954;
+  }
   .cantprod{
     text-align: center;
     margin-top: 100px;
