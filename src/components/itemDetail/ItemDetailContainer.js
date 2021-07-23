@@ -60,7 +60,7 @@ export const ItemDetailContainer = () =>
         [idParams]
     )
 
-    const itemsFilter = itemsDetailJson.filter(items => items.id.toString() === idParams)
+    // const itemsFilter = itemsDetailJson.filter(items => items.id.toString() === idParams)
     // console.log(itemsFilter)
     return (
         <div className="item-list">

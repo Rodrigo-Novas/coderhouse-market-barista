@@ -4,6 +4,7 @@ import { About } from "./components/routes/About"; //debemos intalar esto antes 
 import { Processes } from "./components/routes/Market";
 import { ItemDetailContainer } from "./components/itemDetail/ItemDetailContainer";
 import { Navbar } from "./components/navbar/Navbar";
+import { Cart} from "./components/cart/Cart";
 import { Alert } from "./components/alerts/Alert";
 import { Courses } from "./components/courses/Course";
 import {ThemeProvider} from "styled-components";
@@ -32,9 +33,9 @@ function App() {
           <Switch>
             <Route path="/items/:id" component={ItemDetailContainer}/>
             <Route path="/about" component={About}/>
+            <Route path="/cart" component={Cart}/>
             <Route path="/courses" component={Courses}/>
             <Route path="/" component={Processes}/>
-
           </Switch>
         </div>
       </Router>
