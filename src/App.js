@@ -13,6 +13,7 @@ import { useDarkMode } from "./components/themes/useDarkMode";
 import { lightTheme, darkTheme } from "./components/themes/Theme"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
+import { CartContextProvider } from "./components/cart/cartContext";
 import './App.css';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles/>
       <Router>
+        <CartContextProvider>
         <Alert/>
         <Navbar/>
         <button className="boton-nocturno" onClick={themeToggler}><FontAwesomeIcon icon={faMoon} /></button>
@@ -38,6 +40,7 @@ function App() {
             <Route path="/" component={Processes}/>
           </Switch>
         </div>
+        </CartContextProvider>
       </Router>
     </ThemeProvider>
   )

@@ -5,14 +5,13 @@ export const CartContext = createContext();
 
 export const CartContextProvider = ( { children } ) =>{
     const [cart, setCart] = useState([]);
-    const isntinCart = (receivedItem) => cart.Filter(item=> item.id === receivedItem.id).length === 0;
-
+    const isntinCart = (receivedItem) => cart.filter(item=> item.id === receivedItem.id).length === 0;
     const addToCart = (receivedItem) => {
         if (isntinCart(receivedItem)){
             setCart([...cart, receivedItem])
         }
         else{
-            alert("This item is in the cart, sry :(")
+            alert("This item is in the cart, sry :(.")
         }
     }
 
@@ -23,9 +22,8 @@ export const CartContextProvider = ( { children } ) =>{
     const clearCART = () => setCart([])
 
     return (
-        <CartContext.Provider>
+        <CartContext.Provider value={{addToCart, removeFromCart, clearCART}}>
             {children}
-            {addToCart}
         </CartContext.Provider>
     )
 
