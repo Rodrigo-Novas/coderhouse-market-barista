@@ -15,6 +15,12 @@ export const CartContextProvider = ( { children } ) =>{
         }
     }
 
+    const checkItem = (receivedItem) => {
+        if (isntinCart(receivedItem)){
+            return receivedItem
+        }
+    }
+
     const removeFromCart = (receivedItem) => {
         let allItemsExceptRemoved = cart.filter(item => item.id !== receivedItem.id)
         setCart(allItemsExceptRemoved)
@@ -22,7 +28,7 @@ export const CartContextProvider = ( { children } ) =>{
     const clearCART = () => setCart([])
 
     return (
-        <CartContext.Provider value={{addToCart, removeFromCart, clearCART}}>
+        <CartContext.Provider value={{addToCart, removeFromCart, clearCART, checkItem, cart}}>
             {children}
         </CartContext.Provider>
     )

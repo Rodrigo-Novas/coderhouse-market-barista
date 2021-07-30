@@ -1,4 +1,4 @@
-import React, {useState, useContext} from "react"
+import React, {useState, useContext, useEffect} from "react"
 import {useHistory} from "react-router-dom";
 import { ItemCount } from "../itemCount/ItemCount"
 import { Link } from "react-router-dom"
@@ -12,6 +12,7 @@ export const ItemDetail = ({items}) =>{
     const handleSend = () => {
         addToCart({...items})
     }
+
     const handleRemove = () => {
         removeFromCart(items)
         history.goBack()
@@ -40,7 +41,7 @@ export const ItemDetail = ({items}) =>{
                     <Link className="btn" to="/cart" onClick={handleState}>
                         <button className="btn btn-outline-success" onClick={handleState}>Finish</button>
                     </Link>
-                    <button className="btn btn-outline-warning" onClick = {() => {handleState(); handleRemove();}}>MODIFY</button>
+                    <button className="btn btn-outline-warning" onClick = {() => {handleState(); handleRemove();}}>Quit</button>
                     </>
                 )
                 }

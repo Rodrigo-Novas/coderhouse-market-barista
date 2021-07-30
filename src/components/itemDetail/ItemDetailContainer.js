@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { ItemDetail } from "./ItemDetail";
 import logo from '../../../../baristapp/src/assets/loading.gif'
-
+import { Cart } from '../cart/Cart'
 //forma simplificada funcion flecha
 export const ItemDetailContainer = () =>
 {
@@ -62,6 +62,7 @@ export const ItemDetailContainer = () =>
 
     // const itemsFilter = itemsDetailJson.filter(items => items.id.toString() === idParams)
     // console.log(itemsFilter)
+    console.log(itemDetailState)
     return (
         <div className="item-list">
         <div className="row">
