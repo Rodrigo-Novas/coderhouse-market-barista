@@ -20,6 +20,9 @@ export const Navbar = () => (
                 <li className="nav-item">
                   <Link className="nav-link" to={{ pathname:"https://github.com/Rodrigo-Novas"}} target="_blank" >Follow me in Github</Link>
                 </li>
+                {/* <li className="nav-item">
+                  <Link className="nav-link" to="/categoria">Category</Link>
+                </li> */}
                 <li>
                   <Link className="nav-link" to="/cart"><Carts/></Link>
                 </li>

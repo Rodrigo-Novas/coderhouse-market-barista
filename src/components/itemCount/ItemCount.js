@@ -1,9 +1,11 @@
-import React, {useState} from "react"
+import React, {useState, useContext} from "react"
 import { ReactDOM } from "react";
+import { CartContext } from "../cart/cartContext";
 //item count
 export const ItemCount = ({isCount}) => {
     const [cantidad, setCantidad] = useState(0);
-    
+    const { setArrayCount } = useContext(CartContext)
+    setArrayCount()
     return(
     <div className="less-more"> 
         <button name="qty" value="1" className="count_less btn btn-outline-success" onClick={() => setCantidad(cantidad <=0 ? cantidad : cantidad-1)}><strong>-</strong></button>

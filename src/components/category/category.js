@@ -1,55 +1,40 @@
 import React, {useContext, useEffect, useState} from "react";
-import { CartContext } from "../cart/cartContext"
 import {useHistory} from "react-router-dom";
-
-export const Cart = () =>{
+import { CartContext } from "../cart/cartContext";
+export const Category = () =>{
 
         const history = useHistory()
-        var precioTotal = 0;
-        var cantidadItem = 1;
-        const { cart, removeFromCart } = useContext(CartContext)
-        const handleRemove = (carts) => {
-            removeFromCart(carts)
-        }
+        const { cart } = useContext(CartContext)
+        var categorias = []
         const handleBack = () => {
             history.push('/')
         }
-
-        function totalPrice (){
-            cart.map((carts) => (
-                precioTotal = precioTotal + carts.price))
-            return precioTotal.toPrecision()
-        }
-
         
-        function totalCantity (){
-            cart.map((carts, index) => (
-                cantidadItem = cantidadItem + index))
-            return cantidadItem
+        function category(categoria){
+            categorias = cart.filter(item => item.categoria == categoria)
+            console.log(categorias)
+            return categorias
         }
-
         return (
             <div>
                 {cart.length !== 0 ?
                 <div>
-                {cart.map((carts) => (
+                <div>
+                    <button class="btn"  onClick={category("cafe")}>cafe</button>
+                    <button class="btn" onClick={category("cafetera")}>cafetera</button>
+                </div>
+                {categorias.map(carts=>(
                 <div>
                     <div className="card rounded m-3" style={{ width: "18rem;" }}>
                         <img className="card-img-top w-25 m-auto" src={carts.pictureURL} alt="productos" ></img>
                         <div className="card-body text-center">
                             <p className="card-title bg-warning">{carts.title}</p>
                             <p className="card-text text-secondary">{carts.price}</p>
-                            <p className="card-text text-secondary">{carts.categoria}</p>
                         </div>
-                        <button className="btn btn-outline-warning btn-dark" onClick = { () => handleRemove(carts)}>DELETE</button>
                     </div>
                     
                 </div>
                 ))}
-                <ul class="list-group">
-                    <li class="list-group-item list-group-item-info">Total Price: {totalPrice()}</li>
-                    <li class="list-group-item list-group-item-warning">Total Cantity: {totalCantity()}</li>
-                </ul>
                 </div>:
                 <div>
                 <h1>There is no item in cart</h1>

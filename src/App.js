@@ -5,6 +5,7 @@ import { Processes } from "./components/routes/Market";
 import { ItemDetailContainer } from "./components/itemDetail/ItemDetailContainer";
 import { Navbar } from "./components/navbar/Navbar";
 import { Cart} from "./components/cart/Cart";
+import { Category } from "./components/category/category"
 import { Alert } from "./components/alerts/Alert";
 import { Courses } from "./components/courses/Course";
 import {ThemeProvider} from "styled-components";
@@ -37,6 +38,7 @@ function App() {
             <Route path="/about" component={About}/>
             <Route path="/cart" component={Cart}/>
             <Route path="/courses" component={Courses}/>
+            <Route path="/categoria" component={Category}/>
             <Route path="/" component={Processes}/>
           </Switch>
         </div>

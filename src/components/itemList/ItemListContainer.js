@@ -1,38 +1,40 @@
-import React , { useState } from "react";
+import React , { useState, useEffect } from "react";
 import { Item } from "../item/item";
-
+import { getFirestore } from "../firebase/firebase";
 export const ItemListContainer = (bestProduct) => {
     const product = bestProduct.product;
     const [listItems, setListItems] = useState([]) //inicializo el estado en vacio
-    const items = [
-        {
-           id:1,
-           title:"Cafetera Oster PrimaLatte",
-           price:39.6,
-           pictureURL:"./img/cafetera_oster.jpg"
-        },
+    const db = getFirestore()
+    const items = db.collection("item")
+    // const items = [
+    //     {
+    //        id:1,
+    //        title:"Cafetera Oster PrimaLatte",
+    //        price:39.6,
+    //        pictureURL:"./img/cafetera_oster.jpg"
+    //     },
 
-        {
-            id:2,
-            title:"Cafetera Magefesa",
-            price:40.6,
-            pictureURL:"./img/Cafetera Magefesa.jpg"
-         },
-         {
-            id:3,
-            title:"Café Tostado En Grano Premium",
-            price:50.6,
-            pictureURL:"./img/Café Tostado En Grano Premium.jpg"
-         },
-         {
-            id:4,
-            title:"Café Gunes",
-            price:20.6,
-            pictureURL:"./img/Café Gunes.jpg"
-         }
+    //     {
+    //         id:2,
+    //         title:"Cafetera Magefesa",
+    //         price:40.6,
+    //         pictureURL:"./img/Cafetera Magefesa.jpg"
+    //      },
+    //      {
+    //         id:3,
+    //         title:"Café Tostado En Grano Premium",
+    //         price:50.6,
+    //         pictureURL:"./img/Café Tostado En Grano Premium.jpg"
+    //      },
+    //      {
+    //         id:4,
+    //         title:"Café Gunes",
+    //         price:20.6,
+    //         pictureURL:"./img/Café Gunes.jpg"
+    //      }
    
    
-    ]
+    // ]
 
     //Defino promesa
     const getItems = () => {
@@ -43,12 +45,18 @@ export const ItemListContainer = (bestProduct) => {
         )})
     }
     //Ejecuto la promesa
-    getItems()
-        .then((resolve) => setListItems(resolve)) //cambia el estado a resolve
-        .catch((reject) => console.log(reject))
+    // getItems()
+    //     .then((resolve) => setListItems(resolve)) //cambia el estado a resolve
+    //     .catch((reject) => console.log(reject))
 
+    useEffect( () =>{
+        getItems().then((resolve) =>
+        items.get().then((query)=>
+            setListItems(
+            query.docs.map((doc, index) => {
+            return {...doc.data(), id: index}})),[]))})
 
-    return(
+  return(
         <div className="item-list">
             <div className="row">
                 <div className="col-6 m-auto my-3">
