@@ -6,36 +6,6 @@ export const ItemListContainer = (bestProduct) => {
     const [listItems, setListItems] = useState([]) //inicializo el estado en vacio
     const db = getFirestore()
     const items = db.collection("item")
-    // const items = [
-    //     {
-    //        id:1,
-    //        title:"Cafetera Oster PrimaLatte",
-    //        price:39.6,
-    //        pictureURL:"./img/cafetera_oster.jpg"
-    //     },
-
-    //     {
-    //         id:2,
-    //         title:"Cafetera Magefesa",
-    //         price:40.6,
-    //         pictureURL:"./img/Cafetera Magefesa.jpg"
-    //      },
-    //      {
-    //         id:3,
-    //         title:"Café Tostado En Grano Premium",
-    //         price:50.6,
-    //         pictureURL:"./img/Café Tostado En Grano Premium.jpg"
-    //      },
-    //      {
-    //         id:4,
-    //         title:"Café Gunes",
-    //         price:20.6,
-    //         pictureURL:"./img/Café Gunes.jpg"
-    //      }
-   
-   
-    // ]
-
     //Defino promesa
     const getItems = () => {
         return new Promise((resolve, reject) => {
@@ -44,10 +14,6 @@ export const ItemListContainer = (bestProduct) => {
         }, 2000
         )})
     }
-    //Ejecuto la promesa
-    // getItems()
-    //     .then((resolve) => setListItems(resolve)) //cambia el estado a resolve
-    //     .catch((reject) => console.log(reject))
 
     useEffect( () =>{
         getItems().then((resolve) =>

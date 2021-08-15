@@ -10,19 +10,22 @@ export const Category = () =>{
             history.push('/')
         }
         
-        function category(categoria){
+        const category = (categoria) =>{
             categorias = cart.filter(item => item.categoria == categoria)
             console.log(categorias)
             return categorias
         }
+        // const category_cafetera = () =>{
+        //     categorias = cart.filter(item => item.categoria == "cafetera")
+        //     console.log(categorias)
+        //     return categorias
+        // }
         return (
             <div>
                 {cart.length !== 0 ?
                 <div>
-                <div>
-                    <button class="btn"  onClick={category("cafe")}>cafe</button>
-                    <button class="btn" onClick={category("cafetera")}>cafetera</button>
-                </div>
+                    <button type="button" class="btn btn-secondary" onClick={category("cafe")}>Coffe</button> {/* ver como es que puedo hacer la funcion turnando la categoria  */}
+                    <button type="button" class="btn btn-secondary" onClick={category("cafetera")}>Coffe pop</button>
                 {categorias.map(carts=>(
                 <div>
                     <div className="card rounded m-3" style={{ width: "18rem;" }}>

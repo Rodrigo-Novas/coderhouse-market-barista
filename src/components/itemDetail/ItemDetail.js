@@ -28,6 +28,7 @@ export const ItemDetail = ({items}) =>{
                 <div className="card-body text-center">
                     <p className="card-title bg-warning">{items.title}</p>
                     <p className="card-text text-secondary">{items.price}</p>
+                    <p className="card-text text-secondary">{items.cantidad}</p>
                 </div>
                 {!isCount ? (
                     <>

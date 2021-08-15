@@ -10,8 +10,8 @@ export const ItemDetailContainer = () =>
     const [itemDetailState, setItemDetail] = useState([])
     const db = getFirestore()
     const items = db.collection("item")
-    console.log(items)
-    console.log(itemDetailState)
+    //console.log(items)
+    //console.log(itemDetailState)
     // const itemsDetailJson = [
     //     {
     //         id:1,
@@ -77,7 +77,7 @@ export const ItemDetailContainer = () =>
 
     // const itemsFilter = itemsDetailJson.filter(items => items.id.toString() === idParams)
     // console.log(itemsFilter)
-    console.log(itemDetailState)
+    // console.log(itemDetailState)
     return (
         <div className="item-list">
         <div className="row">

@@ -9,6 +9,7 @@ return(
             <div className="card-body text-center">
                 <p className="card-title bg-warning">{productos.title}</p>
                 <p className="card-text text-secondary">{productos.price}</p>
+                <p className="card-text text-secondary">{productos.cantidad}</p>
             </div>
 
             <Link to={`/items/${productos.id}`} className="btn btn-primary boton">Details</Link>

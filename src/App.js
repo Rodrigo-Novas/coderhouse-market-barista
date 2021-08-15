@@ -7,6 +7,7 @@ import { Navbar } from "./components/navbar/Navbar";
 import { Cart} from "./components/cart/Cart";
 import { Category } from "./components/category/category"
 import { Alert } from "./components/alerts/Alert";
+import { ItemSold } from "./components/itemCollectionSold/ItemCollectionSold";
 import { Courses } from "./components/courses/Course";
 import {ThemeProvider} from "styled-components";
 import { GlobalStyles } from "./components/themes/GlobalStyles";
@@ -39,6 +40,7 @@ function App() {
             <Route path="/cart" component={Cart}/>
             <Route path="/courses" component={Courses}/>
             <Route path="/categoria" component={Category}/>
+            <Route path="/sold" component={ItemSold}/>
             <Route path="/" component={Processes}/>
           </Switch>
         </div>

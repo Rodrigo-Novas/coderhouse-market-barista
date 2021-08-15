@@ -1,6 +1,8 @@
 import React, {useContext, useEffect, useState} from "react";
 import { CartContext } from "../cart/cartContext"
 import {useHistory} from "react-router-dom";
+import { Link } from "react-router-dom"
+import { Carts } from "./CartWidget";
 
 export const Cart = () =>{
 
@@ -24,10 +26,13 @@ export const Cart = () =>{
         
         function totalCantity (){
             cart.map((carts, index) => (
-                cantidadItem = cantidadItem + index))
+                cantidadItem = cantidadItem + index
+                )
+                )
+
             return cantidadItem
         }
-
+        console.log(cart.length)
         return (
             <div>
                 {cart.length !== 0 ?
@@ -50,6 +55,9 @@ export const Cart = () =>{
                     <li class="list-group-item list-group-item-info">Total Price: {totalPrice()}</li>
                     <li class="list-group-item list-group-item-warning">Total Cantity: {totalCantity()}</li>
                 </ul>
+                <Link className="btn" to="/sold">
+                        <button className="btn btn-outline-success">Finish purchase</button>
+                </Link>
                 </div>:
                 <div>
                 <h1>There is no item in cart</h1>

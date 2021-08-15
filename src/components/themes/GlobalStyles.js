@@ -37,5 +37,13 @@ export const GlobalStyles = createGlobalStyle`
       vertical-align: top;
       margin-left: -10px; 
   }
+  #googleAdvice{
+    font-size: 12px;
+    background: #0F9D58;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -10px; 
+  }
   `
 //coloco tambien aca en el styled component
