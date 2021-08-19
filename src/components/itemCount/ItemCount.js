@@ -5,7 +5,7 @@ import { CartContext } from "../cart/cartContext";
 export const ItemCount = ({isCount}) => {
     const [cantidad, setCantidad] = useState(0);
     const { setArrayCount } = useContext(CartContext)
-    setArrayCount()
+    setArrayCount(cantidad)
     return(
     <div className="less-more"> 
         <button name="qty" value="1" className="count_less btn btn-outline-success" onClick={() => setCantidad(cantidad <=0 ? cantidad : cantidad-1)}><strong>-</strong></button>

@@ -1,9 +1,11 @@
-import React , { useState, useEffect } from "react";
+import React , { useState, useEffect, useContext } from "react";
 import { Item } from "../item/item";
 import { getFirestore } from "../firebase/firebase";
+import { CartContext } from "../cart/cartContext";
 export const ItemListContainer = (bestProduct) => {
     const product = bestProduct.product;
     const [listItems, setListItems] = useState([]) //inicializo el estado en vacio
+    const { arrayCount } = useContext(CartContext)
     const db = getFirestore()
     const items = db.collection("item")
     //Defino promesa

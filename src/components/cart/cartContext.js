@@ -5,14 +5,17 @@ export const CartContext = createContext();
 
 export const CartContextProvider = ( { children } ) =>{
     const [cart, setCart] = useState([]);
-    const [arrayCount, setArrayCount] = useState([]);
+    const [arrayCount, setArrayCount] = useState(0);
 	const [userName, setUserName] = useState("");
+    const [totalQty, setTotalQty] = useState(0);
     const db = getFirestore();
-    
+    const itemCollection = db.collection("item");
+
     const isntinCart = (receivedItem) => cart.filter(item=> item.id === receivedItem.id).length === 0;
-    const addToCart = (receivedItem) => {
+    const addToCart = (receivedItem, qty) => {
         if (isntinCart(receivedItem)){
             setCart([...cart, receivedItem])
+            setTotalQty(totalQty + qty);
         }
         else{
             alert("This item is in the cart, sry :(.")
@@ -29,6 +32,23 @@ export const CartContextProvider = ( { children } ) =>{
         let allItemsExceptRemoved = cart.filter(item => item.id !== receivedItem.id)
         setCart(allItemsExceptRemoved)
     }
+
+    const addcantFromCart = async (receivedItem, cantity) => {
+        let itemsUpdate = db.collection("item").where(
+			firebase.firestore.FieldPath.documentId(),
+			"in",
+			cart.map((items) => items.id)
+		);
+        const query = await itemsUpdate .get();
+        const batch = db.batch();
+        query.docs.forEach((docSnapshot, idx) => {
+            batch.update(docSnapshot.ref, {
+                comprados: cantity,
+            });
+        });
+        batch.commit();
+    }
+
     const clearCART = () => setCart([])
     
     const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
@@ -42,7 +62,7 @@ export const CartContextProvider = ( { children } ) =>{
 	};
 
     return (
-        <CartContext.Provider value={{addToCart, removeFromCart, clearCART, checkItem, cart, setArrayCount, arrayCount, autenticacion, userName}}>
+        <CartContext.Provider value={{addToCart, removeFromCart, clearCART, checkItem, cart, setArrayCount, arrayCount, autenticacion, userName,totalQty, addcantFromCart}}>
             {children}
         </CartContext.Provider>
     )

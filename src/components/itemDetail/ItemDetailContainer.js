@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router";
 import { ItemDetail } from "./ItemDetail";
 import logo from '../../../../baristapp/src/assets/loading.gif'
@@ -6,40 +6,11 @@ import { getFirestore } from "../firebase/firebase";
 //forma simplificada funcion flecha
 export const ItemDetailContainer = () =>
 {
-
+    
     const [itemDetailState, setItemDetail] = useState([])
     const db = getFirestore()
     const items = db.collection("item")
-    //console.log(items)
-    //console.log(itemDetailState)
-    // const itemsDetailJson = [
-    //     {
-    //         id:1,
-    //         title:"Cafetera Oster PrimaLatte",
-    //         price:39.6,
-    //         pictureURL:"https://via.placeholder.com/150/"
-    //     },
 
-    //     {
-    //         id:2,
-    //         title:"Cafetera Magefesa",
-    //         price:40.6,
-    //         pictureURL:"https://via.placeholder.com/150/"
-    //      },
-
-    //      {
-    //         id:3,
-    //         title:"Café Tostado En Grano Premium",
-    //         price:50.6,
-    //         pictureURL:"https://via.placeholder.com/150/"
-    //      },
-    //      {
-    //         id:4,
-    //         title:"Café Gunes",
-    //         price:20.6,
-    //         pictureURL:"https://via.placeholder.com/150/"
-    //      }
-    // ]
 
     const { id: idParams} = useParams()
 
