@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router";
-import { ItemDetail } from "./itemDetail";
+import { ItemDetail } from "./ItemDetail";
 import logo from '../../../../baristapp/src/assets/loading.gif'
 import { getFirestore } from "../firebase/firebase";
 //forma simplificada funcion flecha

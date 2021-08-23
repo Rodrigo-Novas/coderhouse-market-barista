@@ -1,7 +1,7 @@
 import React , { useState, useEffect, useContext } from "react";
 import { Item } from "../item/item";
 import { getFirestore } from "../firebase/firebase";
-import { CartContext } from "../cart/cartContext";
+import { CartContext } from "../cart/CartContext";
 export const ItemListContainer = (bestProduct) => {
     const product = bestProduct.product;
     const [listItems, setListItems] = useState([]) //inicializo el estado en vacio

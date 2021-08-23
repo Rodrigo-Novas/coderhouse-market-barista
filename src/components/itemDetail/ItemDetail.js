@@ -1,8 +1,8 @@
 import React, {useState, useContext, useEffect} from "react"
 import {useHistory} from "react-router-dom";
-import { ItemCount } from "../itemCount/itemCount"
+import { ItemCount } from "../itemCount/ItemCount"
 import { Link } from "react-router-dom"
-import { CartContext } from "../cart/cartContext"
+import { CartContext } from "../cart/CartContext"
 export const ItemDetail = ({items}) =>{
      console.log(items.pictureURL)
      const history = useHistory();

@@ -2,20 +2,20 @@ import React from "react";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import { About } from "./components/routes/about"; //debemos intalar esto antes npm i react-router-dom bootswatch
 import { Processes } from "./components/routes/market";
-import { ItemDetailContainer } from "./components/itemDetail/itemDetailContainer";
+import { ItemDetailContainer } from "./components/itemDetail/ItemDetailContainer";
 import { Navbar } from "./components/navbar/navbar";
-import { Cart} from "./components/cart/cart";
+import { Cart} from "./components/cart/Cart";
 import { Category } from "./components/category/category"
 import { Alert } from "./components/alerts/alert";
-import { ItemSold } from "./components/itemCollectionSold/itemCollectionSold";
-import { Courses } from "./components/courses/course";
+import { ItemSold } from "./components/itemCollectionSold/ItemCollectionSold";
+import { Courses } from "./components/courses/Course";
 import {ThemeProvider} from "styled-components";
-import { GlobalStyles } from "./components/themes/globalStyles";
+import { GlobalStyles } from "./components/themes/GlobalStyles";
 import { useDarkMode } from "./components/themes/useDarkMode";
-import { lightTheme, darkTheme } from "./components/themes/theme"
+import { lightTheme, darkTheme } from "./components/themes/Theme"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
-import { CartContextProvider } from "./components/cart/cartContext";
+import { CartContextProvider } from "./components/cart/CartContext";
 import './App.css';
 
 function App() {

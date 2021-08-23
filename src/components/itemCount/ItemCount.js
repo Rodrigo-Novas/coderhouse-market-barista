@@ -1,6 +1,6 @@
 import React, {useState, useContext} from "react"
 import { ReactDOM } from "react";
-import { CartContext } from "../cart/cartContext";
+import { CartContext } from "../cart/CartContext";
 //item count
 export const ItemCount = ({isCount}) => {
     const [cantidad, setCantidad] = useState(0);

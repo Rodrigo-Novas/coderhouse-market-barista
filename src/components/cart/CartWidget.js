@@ -1,7 +1,7 @@
 import React, {useContext} from "react" //use efect despues de renderizar se ejecuta
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { CartContext } from "./cartContext"
+import { CartContext } from "./CartContext"
 export const Carts = () => {
     const { cart } = useContext(CartContext)
     return(
