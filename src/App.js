@@ -1,18 +1,18 @@
 import React from "react";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
-import { About } from "./components/routes/About"; //debemos intalar esto antes npm i react-router-dom bootswatch
-import { Processes } from "./components/routes/Market";
-import { ItemDetailContainer } from "./components/itemDetail/ItemDetailContainer";
-import { Navbar } from "./components/navbar/Navbar";
-import { Cart} from "./components/cart/Cart";
+import { About } from "./components/routes/about"; //debemos intalar esto antes npm i react-router-dom bootswatch
+import { Processes } from "./components/routes/market";
+import { ItemDetailContainer } from "./components/itemDetail/itemDetailContainer";
+import { Navbar } from "./components/navbar/navbar";
+import { Cart} from "./components/cart/cart";
 import { Category } from "./components/category/category"
-import { Alert } from "./components/alerts/Alert";
-import { ItemSold } from "./components/itemCollectionSold/ItemCollectionSold";
-import { Courses } from "./components/courses/Course";
+import { Alert } from "./components/alerts/alert";
+import { ItemSold } from "./components/itemCollectionSold/itemCollectionSold";
+import { Courses } from "./components/courses/course";
 import {ThemeProvider} from "styled-components";
-import { GlobalStyles } from "./components/themes/GlobalStyles";
+import { GlobalStyles } from "./components/themes/globalStyles";
 import { useDarkMode } from "./components/themes/useDarkMode";
-import { lightTheme, darkTheme } from "./components/themes/Theme"
+import { lightTheme, darkTheme } from "./components/themes/theme"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
 import { CartContextProvider } from "./components/cart/cartContext";

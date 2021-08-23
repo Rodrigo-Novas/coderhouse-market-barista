@@ -1,6 +1,6 @@
 import React from "react" //use efect despues de renderizar se ejecuta
-import { ItemListContainer } from "../itemList/ItemListContainer";
-import { ItemCount } from "../itemCount/ItemCount";
+import { ItemListContainer } from "../itemList/itemListContainer";
+import { ItemCount } from "../itemCount/itemCount";
 export const Processes = () => {
     
     return(<div className="row">
