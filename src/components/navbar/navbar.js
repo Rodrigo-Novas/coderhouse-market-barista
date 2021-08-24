@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { Carts } from "../cart/cartWidget"
-import logo from '../../../../baristapp/src/assets/baristappLogo.png';
+import logo from '../img/baristappLogo.png';
 import styled from "styled-components";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
