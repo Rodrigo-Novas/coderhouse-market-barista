@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { getFirestore } from "../firebase/firebase";
 import firebase from "firebase/app";
 //import "firebase/firebase";
-import { CartContext } from "../cart/CartContext"
+import { CartContext } from "../cart/cartContext"
 import styled from "styled-components";
 import {FormSold} from "./formSold"
 import { faGoogle } from "@fortawesome/free-brands-svg-icons"
