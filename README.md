@@ -9,6 +9,13 @@
 
 
 
+<h3>Visita nuestra pagina</h3>
+
+
+<a href="https://baristapp.netlify.app/" target="_blank">https://baristapp.netlify.app/</a>
+
+
+
 <h2><u><strong>Front end utilizado</strong></u></h2>
 
 <ul>
