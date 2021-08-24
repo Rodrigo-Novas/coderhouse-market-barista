@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { Carts } from "../cart/cartWidget"
+import { Carts } from "../cart/CartWidget"
 import logo from '../img/baristappLogo.png';
 import styled from "styled-components";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons"

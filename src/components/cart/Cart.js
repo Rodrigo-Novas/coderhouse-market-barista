@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useState} from "react";
 import { CartContext } from "./cartContext"
 import {useHistory} from "react-router-dom";
 import { Link } from "react-router-dom"
-import { Carts } from "./cartWidget";
+import { Carts } from "./CartWidget";
 
 export const Cart = () =>{
 
