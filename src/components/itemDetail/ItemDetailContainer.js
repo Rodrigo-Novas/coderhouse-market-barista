@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router";
 import { ItemDetail } from "./ItemDetail";
-import logo from '../../../../baristapp/src/assets/loading.gif'
+import logo from '../img/loading.gif'
 import { getFirestore } from "../firebase/firebase";
 //forma simplificada funcion flecha
 export const ItemDetailContainer = () =>
