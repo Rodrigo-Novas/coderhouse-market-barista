@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext } from "react";
-import { CartContext } from "../cart/CartContext"
+import { CartContext } from "../cart/cartContext"
 
 const buttonLogin  = styled.button`
     @media (min-width: 992px){

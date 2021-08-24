@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from "react";
 import {useHistory} from "react-router-dom";
-import { CartContext } from "../cart/CartContext";
+import { CartContext } from "../cart/cartContext";
 export const Category = () =>{
 
         const history = useHistory()

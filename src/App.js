@@ -15,7 +15,7 @@ import { useDarkMode } from "./components/themes/useDarkMode";
 import { lightTheme, darkTheme } from "./components/themes/Theme"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
-import { CartContextProvider } from "./components/cart/CartContext";
+import { CartContextProvider } from "./components/cart/cartContext";
 import './App.css';
 
 function App() {
