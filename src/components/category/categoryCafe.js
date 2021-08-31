@@ -11,12 +11,13 @@ export const Category = () =>{
             history.push('/')
         }
         const cartFilter = cart.filter (carts=>carts.categoria == "cafe")
-
+        console.log(cartFilter)
+        console.log(cart)
         return (
             <div>
                 {cart.length !== 0 ?
                 <div>
-                {cart.filter((carts)=>carts.categoria == "cafe"(
+                {cartFilter.map((carts)=>(
                 <div>
                     <div className="card rounded m-3" style={{ width: "18rem;" }}>
                         <img className="card-img-top w-25 m-auto" src={carts.pictureURL} alt="productos" ></img>
