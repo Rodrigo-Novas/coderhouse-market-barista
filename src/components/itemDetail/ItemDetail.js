@@ -55,8 +55,8 @@ export const ItemDetail = ({items}) =>{
                 <img className="card-img-top w-25 m-auto" src={items.pictureURL} alt="producto" ></img>
                 <div className="card-body text-center">
                     <p className="card-title bg-warning">{items.title}</p>
-                    <p className="card-text text-secondary">{items.price}</p>
-                    <p className="card-text text-secondary">{items.cantidad}</p>
+                    <p className="card-text text-secondary">Price: {items.price}</p>
+                    <p className="card-text text-secondary">Cantity: {items.cantidad}</p>
                 </div>
                 {!isCount ? (
                     <>

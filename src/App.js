@@ -5,7 +5,8 @@ import { Processes } from "./components/routes/market";
 import { ItemDetailContainer } from "./components/itemDetail/ItemDetailContainer";
 import { Navbar } from "./components/navbar/navbar";
 import { Cart} from "./components/cart/Cart";
-import { Category } from "./components/category/category"
+import { Category } from "./components/category/categoryCafe"
+import { CategoryCafetera } from "./components/category/categoryCafetera"
 import { Alert } from "./components/alerts/alert";
 import { ItemSold } from "./components/itemCollectionSold/ItemCollectionSold";
 import { Courses } from "./components/courses/Course";
@@ -39,7 +40,8 @@ function App() {
             <Route path="/about" component={About}/>
             <Route path="/cart" component={Cart}/>
             <Route path="/courses" component={Courses}/>
-            <Route path="/categoria" component={Category}/>
+            <Route path="/categoriaCafe" component={Category}/>
+            <Route path="/categoriaCafetera" component={CategoryCafetera}/>
             <Route path="/sold" component={ItemSold}/>
             <Route path="/" component={Processes}/>
           </Switch>

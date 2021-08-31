@@ -43,8 +43,8 @@ export const Cart = () =>{
                         <img className="card-img-top w-25 m-auto" src={carts.pictureURL} alt="productos" ></img>
                         <div className="card-body text-center">
                             <p className="card-title bg-warning">{carts.title}</p>
-                            <p className="card-text text-secondary">{carts.price}</p>
-                            <p className="card-text text-secondary">{carts.categoria}</p>
+                            <p className="card-text text-secondary">Price: {carts.price}</p>
+                            <p className="card-text text-secondary">Category: {carts.categoria}</p>
                         </div>
                         <button className="btn btn-outline-warning btn-dark" onClick = { () => handleRemove(carts)}>DELETE</button>
                     </div>
