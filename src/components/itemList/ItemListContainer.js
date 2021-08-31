@@ -2,6 +2,7 @@ import React , { useState, useEffect, useContext } from "react";
 import { Item } from "../item/item";
 import { getFirestore } from "../firebase/firebase";
 import { CartContext } from "../cart/cartContext";
+import { Link } from "react-router-dom"
 export const ItemListContainer = (bestProduct) => {
     const product = bestProduct.product;
     const [listItems, setListItems] = useState([]) //inicializo el estado en vacio
@@ -39,8 +40,8 @@ export const ItemListContainer = (bestProduct) => {
                 </div>
             </div>
             <div className="row">
-                <Link to={{pathname: "/categoriaCafe", state: { cart: productos}}} className="btn btn-primary boton">Cafe</Link>
-                <Link to={{pathname: "/categoriaCafetera", state: { cart: productos}}} className="btn btn-primary boton">Cafetera</Link>
+                <Link to={{pathname: "/categoriaCafe", state: { cart: listItems}}} className="btn btn-primary boton">Cafe</Link>
+                <Link to={{pathname: "/categoriaCafetera", state: { cart: listItems}}} className="btn btn-primary boton">Cafetera</Link>
             </div>
             <div className="row">
                     {listItems.map(productos => (
