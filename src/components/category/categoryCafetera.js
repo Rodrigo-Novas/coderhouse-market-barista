@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useState} from "react";
 import {useHistory, useLocation} from "react-router-dom";
 import { CartContext } from "../cart/cartContext";
 import { Link } from "react-router-dom"
-export const CategoryCafetera = ({cart=null}) =>{
+export const CategoryCafetera = () =>{
 
         const history = useHistory()
         const location = useLocation()
