@@ -10,7 +10,7 @@ export const Category = () =>{
         const handleBack = () => {
             history.push('/')
         }
-        
+        const cartFilter = cart.filter (carts=>carts.categoria == "cafe")
 
         return (
             <div>

@@ -10,7 +10,8 @@ export const CategoryCafetera = () =>{
         const handleBack = () => {
             history.push('/')
         }
-
+        console.log(cart)
+        console.log(cart.length)
         return (
             <div>
                 {cart.length !== 0 ?
