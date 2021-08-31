@@ -1,12 +1,12 @@
 import React, {useContext, useEffect, useState} from "react";
-import {useHistory} from "react-router-dom";
+import {useHistory, useLocation} from "react-router-dom";
 import { CartContext } from "../cart/cartContext";
 import { Link } from "react-router-dom"
 export const CategoryCafetera = ({cart=null}) =>{
 
         const history = useHistory()
-        // const { cart } = useContext(CartContext)
-        var categorias = []
+        const location = useLocation()
+        const { cart } = location.state
         const handleBack = () => {
             history.push('/')
         }
@@ -15,7 +15,7 @@ export const CategoryCafetera = ({cart=null}) =>{
             <div>
                 {cart.length !== 0 ?
                 <div>
-                {categorias.map(carts=>carts.categoria == "cafetera"(
+                {cart.filter(carts=>carts.categoria == "cafetera"(
                 <div>
                     <div className="card rounded m-3" style={{ width: "18rem;" }}>
                         <img className="card-img-top w-25 m-auto" src={carts.pictureURL} alt="productos" ></img>

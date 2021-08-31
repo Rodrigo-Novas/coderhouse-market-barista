@@ -7,7 +7,6 @@ export const Category = () =>{
         const history = useHistory()
         const location = useLocation()
         const { cart } = location.state
-        var categorias = []
         const handleBack = () => {
             history.push('/')
         }
@@ -17,7 +16,7 @@ export const Category = () =>{
             <div>
                 {cart.length !== 0 ?
                 <div>
-                {categorias.filter(carts=>carts.categoria == "cafe"(
+                {cart.filter(carts=>carts.categoria == "cafe"(
                 <div>
                     <div className="card rounded m-3" style={{ width: "18rem;" }}>
                         <img className="card-img-top w-25 m-auto" src={carts.pictureURL} alt="productos" ></img>
