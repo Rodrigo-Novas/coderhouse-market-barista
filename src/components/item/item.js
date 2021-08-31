@@ -4,10 +4,6 @@ export const Item = ( {productos} ) => {
 
 return(
         <div className="contenedor">
-            <div className="row">
-                <Link to={{pathname: "/categoriaCafe", state: { cart: productos}}} className="btn btn-primary boton">Cafe</Link>
-                <Link to={{pathname: "/categoriaCafetera", state: { cart: productos}}} className="btn btn-primary boton">Cafetera</Link>
-            </div>
             <div className="card rounded" style={{ width: "18rem;" }}>
                 <img className="card-img-top w-25 m-auto" src={productos.pictureURL} alt="productos" ></img>
                 <div className="card-body text-center">

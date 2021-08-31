@@ -1,11 +1,12 @@
 import React, {useContext, useEffect, useState} from "react";
-import {useHistory} from "react-router-dom";
-import { CartContext } from "../cart/cartContext";
+import {useHistory, useLocation} from "react-router-dom";
 import { Link } from "react-router-dom"
-export const Category = ({cart=null}) =>{
+
+export const Category = () =>{
 
         const history = useHistory()
-        // const { cart } = useContext(CartContext)
+        const location = useLocation()
+        const { cart } = location.state
         var categorias = []
         const handleBack = () => {
             history.push('/')
