@@ -28,7 +28,7 @@ export const ItemDetail = ({items}) =>{
     }
 
     const handleCantMore = () =>{
-        if (cantidad <= items.cantidad){
+        if (cantidad < items.cantidad){
             setCantidad(cantidad + 1)
         }
     }
