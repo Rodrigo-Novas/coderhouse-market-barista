@@ -39,8 +39,8 @@ export const ItemListContainer = (bestProduct) => {
                     </div>
                 </div>
             </div>
-            <div className="row">
-                <div className="col-6 mx-5">
+            <div className="row m-5">
+                <div className="col-6">
                     <Link to={{pathname: "/categoriaCafe", state: { cart: listItems}}} className="btn btn-primary boton">Cafe</Link>
                 </div>
                 <div className="col-6 ">
