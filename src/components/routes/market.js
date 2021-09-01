@@ -10,7 +10,7 @@ export const Processes = () => {
         {/* aplicate prop greeting */}
         <ItemListContainer product="Coffee of salamanca"/>
         <div className="col-md-12 my-2 mx-4">
-            <p>Coderhouse - in this place you will see the footer</p>
+            <p>Baristapp - Created by Rodrigo Novas</p>
         </div>
     </div>)
 }
