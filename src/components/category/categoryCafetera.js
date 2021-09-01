@@ -12,18 +12,19 @@ export const CategoryCafetera = () =>{
         }
         console.log(cart)
         console.log(cart.length)
+        const cartFilter = cart.filter (carts=>carts.categoria == "cafetera")
         return (
             <div>
                 {cart.length !== 0 ?
                 <div>
-                {cart.filter((carts)=>carts.categoria === "cafetera"(
+                {cart.map((carts)=>(
                 <div>
                     <div className="card rounded m-3" style={{ width: "18rem;" }}>
                         <img className="card-img-top w-25 m-auto" src={carts.pictureURL} alt="productos" ></img>
                         <div className="card-body text-center">
                             <p className="card-title bg-warning">{carts.title}</p>
                             <p className="card-text text-secondary">Price: {carts.price}</p>
-                            <p className="card-text text-secondary">Price: {carts.price}</p>
+                            <p className="card-text text-secondary">Cantity: {carts.cantidad}</p>
                             <p className="card-text text-secondary">Category: {carts.categoria}</p>
                         </div>
                         <Link to={`/items/${carts.id}`} className="btn btn-primary boton">Details</Link>

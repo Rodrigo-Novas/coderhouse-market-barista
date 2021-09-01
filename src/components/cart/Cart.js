@@ -7,8 +7,8 @@ import { Carts } from "./CartWidget";
 export const Cart = () =>{
 
         const history = useHistory()
-        var precioTotal = 0;
-        var cantidadItem = 1;
+        const [precioTotalS, setPrecioTotal] = useState(0);
+        const [cantidadItemS, setCantidadItem] = useState(1);
         const { cart, removeFromCart } = useContext(CartContext)
         const handleRemove = (carts) => {
             removeFromCart(carts)
@@ -19,14 +19,14 @@ export const Cart = () =>{
 
         function totalPrice (){
             cart.map((carts) => (
-                precioTotal = precioTotal + carts.price))
-            return precioTotal.toPrecision()
+                setPrecioTotal(precioTotalS + carts.price)))
+            return precioTotalS.toPrecision()
         }
 
         
         function totalCantity (){
             cart.map((carts, index) => (
-                cantidadItem = cantidadItem + index
+                setCantidadItem(cantidadItemS + index)
                 )
                 )
 

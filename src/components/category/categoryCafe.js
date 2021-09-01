@@ -24,7 +24,7 @@ export const Category = () =>{
                         <div className="card-body text-center">
                             <p className="card-title bg-warning">{carts.title}</p>
                             <p className="card-text text-secondary">Price: {carts.price}</p>
-                            <p className="card-text text-secondary">Price: {carts.price}</p>
+                            <p className="card-text text-secondary">Cantity: {carts.cantidad}</p>
                             <p className="card-text text-secondary">Category: {carts.categoria}</p>
                         </div>
                         <Link to={`/items/${carts.id}`} className="btn btn-primary boton">Details</Link>

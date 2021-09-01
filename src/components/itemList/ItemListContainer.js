@@ -40,8 +40,12 @@ export const ItemListContainer = (bestProduct) => {
                 </div>
             </div>
             <div className="row">
-                <Link to={{pathname: "/categoriaCafe", state: { cart: listItems}}} className="btn btn-primary boton">Cafe</Link>
-                <Link to={{pathname: "/categoriaCafetera", state: { cart: listItems}}} className="btn btn-primary boton">Cafetera</Link>
+                <div className="col-6">
+                    <Link to={{pathname: "/categoriaCafe", state: { cart: listItems}}} className="btn btn-primary boton">Cafe</Link>
+                </div>
+                <div className="col-6">
+                    <Link to={{pathname: "/categoriaCafetera", state: { cart: listItems}}} className="btn btn-primary boton">Cafetera</Link>
+                </div>
             </div>
             <div className="row">
                     {listItems.map(productos => (
