@@ -30,7 +30,7 @@ export const Cart = () =>{
                 )
                 )
 
-            return cantidadItem
+            return cantidadItemS
         }
         console.log(cart.length)
         return (
