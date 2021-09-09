@@ -40,8 +40,7 @@ function App() {
             <Route path="/about" component={About}/>
             <Route path="/cart" component={Cart}/>
             <Route path="/courses" component={Courses}/>
-            <Route path="/categoriaCafe" component={Category}/>
-            <Route path="/categoriaCafetera" component={CategoryCafetera}/>
+            <Route path="/Categorias/:categoria" component={CategoryCafetera}/>
             <Route path="/sold" component={ItemSold}/>
             <Route path="/" component={Processes}/>
           </Switch>

@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from "react";
 import {useHistory, useLocation} from "react-router-dom";
 import { Link } from "react-router-dom"
-
+import { useParams } from "react-router";
 export const Category = () =>{
 
         const history = useHistory()

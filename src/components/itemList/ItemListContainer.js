@@ -41,10 +41,10 @@ export const ItemListContainer = (bestProduct) => {
             </div>
             <div className="row m-5">
                 <div className="col-6">
-                    <Link to={{pathname: "/categoriaCafe", state: { cart: listItems}}} className="btn btn-primary boton">Cafe</Link>
+                    <Link to={{pathname: "/Categorias", state: { cart: listItems}, params: {categoria: "Cafe" }}} className="btn btn-primary boton">Cafe</Link>
                 </div>
                 <div className="col-6 ">
-                    <Link to={{pathname: "/categoriaCafetera", state: { cart: listItems}}} className="btn btn-primary boton">Cafetera</Link>
+                    <Link to={{pathname: "/Categorias", state: { cart: listItems}, params: {categoria: "Cafetera" }}} className="btn btn-primary boton">Cafetera</Link>
                 </div>
             </div>
             <div className="row">

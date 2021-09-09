@@ -1,18 +1,19 @@
 import React, {useContext, useEffect, useState} from "react";
 import {useHistory, useLocation} from "react-router-dom";
-import { CartContext } from "../cart/cartContext";
 import { Link } from "react-router-dom"
+import { useParams } from "react-router";
 export const CategoryCafetera = () =>{
 
         const history = useHistory()
         const location = useLocation()
         const { cart } = location.state
+        const { categoria: categoriaParam} = useParams()
         const handleBack = () => {
             history.push('/')
         }
         console.log(cart)
         console.log(cart.length)
-        const cartFilter = cart.filter (carts=>carts.categoria == "cafetera")
+        const cartFilter = cart.filter (carts=>carts.categoria == categoriaParam)
         return (
             <div>
                 {cart.length !== 0 ?

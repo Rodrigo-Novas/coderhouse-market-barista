@@ -34,7 +34,12 @@ export const ItemDetail = ({items}) =>{
     }
 
     const handleAddCant = () =>{
-        addcantFromCart(items, cantidad)
+        if (cantidad <= 0){
+            alert("The cantity is less than 1 you cannot buy, add items by clicking on the + simbol")
+        }
+        else{
+            addcantFromCart(items, cantidad)
+        }
     }
     const handleAddProduct = (e) => {
         e.stopPropagation();
