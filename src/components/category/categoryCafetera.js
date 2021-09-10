@@ -11,6 +11,7 @@ export const CategoryCafetera = () =>{
         const handleBack = () => {
             history.push('/')
         }
+        console.log(categoriaParam)
         console.log(cart)
         console.log(cart.length)
         const cartFilter = cart.filter (carts=>carts.categoria == categoriaParam)

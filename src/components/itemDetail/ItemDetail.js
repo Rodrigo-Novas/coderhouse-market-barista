@@ -14,10 +14,13 @@ export const ItemDetail = ({items}) =>{
      const [cantidad, setCantidad] = useState(0);
      const { addToCart, removeFromCart, clearCART, addcantFromCart } = useContext(CartContext)
     const handleSend = () => {
+        console.log(cantidad)
         if (cantidad <= 0){
+            console.log("cero")
             toast("Before of pressing BUY, add an item by clicking in the + Button").fontcolor("red")
         }
         else{
+            console.log("nada")
             addToCart({...items})
             toast("Success").fontcolor("green")
         }
