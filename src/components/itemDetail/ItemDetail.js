@@ -3,7 +3,6 @@ import {useHistory} from "react-router-dom";
 import { ItemCount } from "../itemCount/ItemCount"
 import { Link } from "react-router-dom"
 import { CartContext } from "../cart/cartContext"
-import { ToastContainer, toast } from 'react-toastify';
 
 
 export const ItemDetail = ({items}) =>{
@@ -17,12 +16,13 @@ export const ItemDetail = ({items}) =>{
         console.log(cantidad)
         if (cantidad <= 0){
             console.log("cero")
-            toast("Before of pressing BUY, add an item by clicking in the + Button").fontcolor("red")
+            if (confirm("You cannot buy without add an item")) {
+                history.goBack()
+              }
         }
         else{
             console.log("nada")
             addToCart({...items})
-            toast("Success").fontcolor("green")
         }
     }
 
@@ -86,7 +86,6 @@ export const ItemDetail = ({items}) =>{
                 
                 <button className="btn btn-outline-success" onClick = {() => {handleState(); handleSend();}}>BUY</button>
                 <button className="btn btn-outline-warning" onClick = {() => {handleState(); handleClear();}}>CLEAR CART</button>
-                <ToastContainer />
                 </>):(
                     <>
                     <Link className="btn" to="/cart" onClick={handleState}>
