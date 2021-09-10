@@ -3,6 +3,7 @@ import {useHistory} from "react-router-dom";
 import { ItemCount } from "../itemCount/ItemCount"
 import { Link } from "react-router-dom"
 import { CartContext } from "../cart/cartContext"
+import {NotificationContainer, NotificationManager} from 'react-notifications';
 export const ItemDetail = ({items}) =>{
      console.log(items.pictureURL)
      const history = useHistory();
@@ -11,7 +12,13 @@ export const ItemDetail = ({items}) =>{
      const [cantidad, setCantidad] = useState(0);
      const { addToCart, removeFromCart, clearCART, addcantFromCart } = useContext(CartContext)
     const handleSend = () => {
+        if (cantidad <= 0){
+            NotificationManager.warning('The cantity is less than 1 you cannot buy, add items by clicking on the + simbol', 'Close after 3000ms', 3000);
+        }
+        else{
+        NotificationManager.success('Item added with success', 'Item Added');
         addToCart({...items})
+        }
     }
 
     const handleRemove = () => {
@@ -34,12 +41,7 @@ export const ItemDetail = ({items}) =>{
     }
 
     const handleAddCant = () =>{
-        if (cantidad <= 0){
-            alert("The cantity is less than 1 you cannot buy, add items by clicking on the + simbol")
-        }
-        else{
             addcantFromCart(items, cantidad)
-        }
     }
     const handleAddProduct = (e) => {
         e.stopPropagation();
@@ -76,8 +78,10 @@ export const ItemDetail = ({items}) =>{
                     <div className="item-cantity">You have {cantidad} products, enjoy!</div>  
                 </div>
                 </div>
+                
                 <button className="btn btn-outline-success" onClick = {() => {handleState(); handleSend();}}>BUY</button>
                 <button className="btn btn-outline-warning" onClick = {() => {handleState(); handleClear();}}>CLEAR CART</button>
+                <NotificationContainer/>
                 </>):(
                     <>
                     <Link className="btn" to="/cart" onClick={handleState}>
