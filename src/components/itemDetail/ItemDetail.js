@@ -5,6 +5,7 @@ import { Link } from "react-router-dom"
 import { CartContext } from "../cart/cartContext"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Toast } from "react-toastify/dist/components";
 
 export const ItemDetail = ({items}) =>{
      console.log(items.pictureURL)
@@ -13,15 +14,19 @@ export const ItemDetail = ({items}) =>{
      const handleState = () => setCount(true)
      const [cantidad, setCantidad] = useState(0);
      const { addToCart, removeFromCart, clearCART, addcantFromCart } = useContext(CartContext)
-     const notifyWar = () => toast("Wow so easy!").fontcolor("red");
-     const notifySucc = () => toast("Wow so easy!").fontcolor("green");
     const handleSend = () => {
         if (cantidad <= 0){
-            notifyWar
+            toast("Before of pressing BUY, add an item by clicking in the + Button", {
+                className: css({
+                    background: "#E50914 !important"
+                })})
         }
         else{
-            notifySucc
             addToCart({...items})
+            toast("Success", {
+                className: css({
+                    background: "#1DB954 !important"
+                })})
         }
     }
 
