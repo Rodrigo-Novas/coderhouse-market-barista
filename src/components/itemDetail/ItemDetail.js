@@ -15,17 +15,11 @@ export const ItemDetail = ({items}) =>{
      const { addToCart, removeFromCart, clearCART, addcantFromCart } = useContext(CartContext)
     const handleSend = () => {
         if (cantidad <= 0){
-            toast("Before of pressing BUY, add an item by clicking in the + Button", {
-                className: css({
-                    background: "#E50914 !important"
-                })})
+            toast("Before of pressing BUY, add an item by clicking in the + Button").fontcolor("red")
         }
         else{
             addToCart({...items})
-            toast("Success", {
-                className: css({
-                    background: "#1DB954 !important"
-                })})
+            toast("Success").fontcolor("green")
         }
     }
 
