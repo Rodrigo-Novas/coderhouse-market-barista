@@ -16,7 +16,7 @@ export const ItemDetail = ({items}) =>{
         console.log(cantidad)
         if (cantidad <= 0){
             console.log("cero")
-            if (confirm("You cannot buy without add an item")) {
+            if (windows.confirm("You cannot buy without add an item")) {
                 history.goBack()
               }
         }
