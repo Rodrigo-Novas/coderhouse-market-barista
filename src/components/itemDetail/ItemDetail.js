@@ -5,7 +5,6 @@ import { Link } from "react-router-dom"
 import { CartContext } from "../cart/cartContext"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Toast } from "react-toastify/dist/components";
 
 export const ItemDetail = ({items}) =>{
      console.log(items.pictureURL)
