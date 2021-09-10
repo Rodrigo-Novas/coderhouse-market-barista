@@ -44,7 +44,7 @@ export const ItemListContainer = (bestProduct) => {
                     <Link to={{pathname: "/Categorias", state: { cart: listItems}, params: {categoria: "Cafe" }}} className="btn btn-primary boton">Cafe</Link>
                 </div>
                 <div className="col-6 ">
-                    <Link to={{pathname: "/Categorias", state: { cart: listItems}, params: {categoria: "Cafetera" }}} className="btn btn-primary boton">Cafetera</Link>
+                    <Link to={{pathname: "/Categorias", state: { cart: listItems} }} params={{ categoria: "Cafetera" }} className="btn btn-primary boton">Cafetera</Link>
                 </div>
             </div>
             <div className="row">

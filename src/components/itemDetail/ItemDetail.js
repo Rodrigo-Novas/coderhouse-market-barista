@@ -3,7 +3,9 @@ import {useHistory} from "react-router-dom";
 import { ItemCount } from "../itemCount/ItemCount"
 import { Link } from "react-router-dom"
 import { CartContext } from "../cart/cartContext"
-import {NotificationContainer, NotificationManager} from 'react-notifications';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export const ItemDetail = ({items}) =>{
      console.log(items.pictureURL)
      const history = useHistory();
@@ -11,13 +13,15 @@ export const ItemDetail = ({items}) =>{
      const handleState = () => setCount(true)
      const [cantidad, setCantidad] = useState(0);
      const { addToCart, removeFromCart, clearCART, addcantFromCart } = useContext(CartContext)
+     const notifyWar = () => toast("Wow so easy!").fontcolor("red");
+     const notifySucc = () => toast("Wow so easy!").fontcolor("green");
     const handleSend = () => {
         if (cantidad <= 0){
-            NotificationManager.warning('The cantity is less than 1 you cannot buy, add items by clicking on the + simbol', 'Close after 3000ms', 3000);
+            notifyWar
         }
         else{
-        NotificationManager.success('Item added with success', 'Item Added');
-        addToCart({...items})
+            notifySucc
+            addToCart({...items})
         }
     }
 
@@ -81,7 +85,7 @@ export const ItemDetail = ({items}) =>{
                 
                 <button className="btn btn-outline-success" onClick = {() => {handleState(); handleSend();}}>BUY</button>
                 <button className="btn btn-outline-warning" onClick = {() => {handleState(); handleClear();}}>CLEAR CART</button>
-                <NotificationContainer/>
+                <ToastContainer />
                 </>):(
                     <>
                     <Link className="btn" to="/cart" onClick={handleState}>
