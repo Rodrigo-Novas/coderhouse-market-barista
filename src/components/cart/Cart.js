@@ -9,8 +9,8 @@ export const Cart = () =>{
         const history = useHistory()
         // const [precioTotalS, setPrecioTotal] = useState(0);
         // const [cantidadItemS, setCantidadItem] = useState(1);
-        const precioTotal = 0;
-        const cantidadItem = 1;
+        var precioTotal = 0;
+        var cantidadItem = 1;
         const { cart, removeFromCart } = useContext(CartContext)
         const handleRemove = (carts) => {
             removeFromCart(carts)
