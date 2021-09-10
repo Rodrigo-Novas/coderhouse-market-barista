@@ -17,10 +17,12 @@ export const ItemDetail = ({items}) =>{
         if (cantidad <= 0){
             console.log("cero")
             if (window.confirm("You cannot buy without add an item")) {
-                history.go(0)
+                history.push("/temp");
+                history.goBack()
             }
             else{
-                history.go(0)
+                history.push("/temp");
+                history.goBack()
             }
         }
         else{
